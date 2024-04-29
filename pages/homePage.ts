@@ -20,4 +20,8 @@ export class HomePage extends HelperBase{
         await expect(this.page).toHaveTitle(/Automation Exercise/);
 
     }
+    async deleteAccountAndVerify() {           
+        await this.page.getByRole('link', { name: 'Delete Account' }).click()
+        await expect(this.page.getByRole('heading', { name: "Account Deleted!" })).toBeVisible()
+    }
 }

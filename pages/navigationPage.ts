@@ -31,14 +31,7 @@ export class NavigationPage extends HelperBase {
         await this.page.getByRole('link', { name: ' Contact us' }).click()
         await this.bekle(2)
     }
-    /*bu method çalışan diğer methodlar için gerekli bir method. o yüzden private.Test sayfasında görülmesine gerek yok
-    private async selectGroupMenuItem(groupItemTitle: string) {
-        const groupMenuItem = this.page.getByTitle(groupItemTitle)
-        const expandedState = await groupMenuItem.getAttribute('aria-expanded')
-        if (expandedState == "false")
-            await groupMenuItem.click()
-
-    }*/
+  
     /*Gezinme sayfasına daha fazla yeniden kullanılabilir yöntem ekledik. Bu yöntemleri, ana menünün durumu ne olursa olsun, menümüz içindeki herhangi bir sayfayı seçebilecek kadar akıllı hale getirdik. Genişledi mi yoksa daraltıldı mı? Böylece ana menünün durumunu kontrol edecek dahili bir yöntem oluşturduk. Genişletilmiş mi yoksa daraltılmış mı? Ve sonra duruma bağlı olarak ya bu menü öğesine tıklanır ya da bu öğeyi atlayıp menüden gerçek öğeyi seçeriz ve ardından test uygulamasında sayfalar arasında gezinmek için sayfa nesnesi yöntemlerimizi başarıyla çağırabiliriz.*/
 
 }

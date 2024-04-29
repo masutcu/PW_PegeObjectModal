@@ -2,6 +2,7 @@ import { Page} from "playwright/test";
 import {NavigationPage} from '../pages/navigationPage'
 import { LoginPage } from "./loginpage";
 import { HomePage } from "./homePage";
+import { SignUpDetailFormPage } from "./signUpDetailFormPage";
 
 
 
@@ -10,6 +11,7 @@ export class PageManager{
     private readonly navigationPage:NavigationPage
     private readonly loginPage:LoginPage
     private readonly homePage:HomePage
+    private readonly signUpDetailFormPage:SignUpDetailFormPage
     
 
     constructor(page:Page) {
@@ -17,6 +19,7 @@ export class PageManager{
         this.navigationPage=new NavigationPage(this.page)
         this.loginPage=new LoginPage(this.page)
         this.homePage=new HomePage(this.page)
+        this.signUpDetailFormPage=new SignUpDetailFormPage(this.page)
 
         
 
@@ -29,6 +32,9 @@ export class PageManager{
     }
     onHomePage(){
         return this.homePage
+    }
+    onSignUpDetailFormPage(){
+        return this.signUpDetailFormPage
     }
 
     

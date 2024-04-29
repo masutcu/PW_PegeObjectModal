@@ -15,37 +15,18 @@ import { PageManager } from '../pages/pageManager'
 //10. Verify that user is navigated to login page
 
 
-
 test.describe('Test Case 4', () => {  
+    test('Logout User', async ({page}) => {
     
-    
-
-test('navigate to home page', async ({page}) => {
-    const pm = new PageManager(page) 
-    await pm.onHomePage().gotoHomePage("http://automationexercise.com")
-    await pm.onHomePage().verifyHomePage()
-        
-        //4. Click on 'Signup / Login' button
-        //5. Verify 'Login to your account' is visible
+        const pm = new PageManager(page) 
+        await pm.onHomePage().gotoHomePage("http://automationexercise.com")
+        await pm.onHomePage().verifyHomePage()
         await pm.navigateTo().signupLoginPage()
         await expect(page.getByRole('heading', { name: "Login to your account" })).toBeVisible()
-
-        //6. Enter correct email address and password
-        //7. Click 'login' button
-        await pm.onLoginPage().loginForm("JulianSUTCU148@test.com","Istanbul1453")
-        
-        
-        //8. Verify that 'Logged in as username' is visible
-        await pm.onLoginPage().verifyLoginPage()
-       
-        //9. Click 'Logout' button
-        //10. Verify that user is navigated to login page
-        await pm.onLoginPage().logoutPage()
-
-       
+        await pm.onLoginPage().fillLoginForm("JulianSUTCU148@test.com","Istanbul1453")
+        await pm.onLoginPage().verifyLoginPage("Julian SUTCU")
+        await pm.onLoginPage().logoutPage()     
 
     })
-
-
 })
 
