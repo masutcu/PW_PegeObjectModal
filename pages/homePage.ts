@@ -9,8 +9,8 @@ export class HomePage extends HelperBase{
         super(page)
 
     }
-    async gotoHomePage(url: string) {           
-        await this.page.goto(url)
+    async gotoHomePage() {           
+        await this.page.goto("/")
     }
     
     

@@ -31,7 +31,9 @@ test.describe('Test Case 1', () => {
         const name="Test BySUTCU"
         const randomEmail= `${name.replace(' ', '')}${faker.number.int(1000)}@test.com`
         
-        await pm.onHomePage().gotoHomePage("http://automationexercise.com")
+        console.log(process.env.STATE)
+                       
+        await pm.onHomePage().gotoHomePage()
         await pm.onHomePage().verifyHomePage()
         await pm.navigateTo().signupLoginPage()
         await expect(page.getByRole('heading', { name: "New User Signup!" })).toBeVisible()

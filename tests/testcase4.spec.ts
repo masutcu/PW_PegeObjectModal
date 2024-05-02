@@ -19,7 +19,7 @@ test.describe('Test Case 4', () => {
     test('Logout User', async ({page}) => {
     
         const pm = new PageManager(page) 
-        await pm.onHomePage().gotoHomePage("http://automationexercise.com")
+        await pm.onHomePage().gotoHomePage()
         await pm.onHomePage().verifyHomePage()
         await pm.navigateTo().signupLoginPage()
         await expect(page.getByRole('heading', { name: "Login to your account" })).toBeVisible()
